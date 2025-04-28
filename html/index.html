@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeonCorp CTF</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body class="bg-gray-900 text-white font-mono relative overflow-hidden">
+  <div class="container mx-auto p-6 z-10 relative">
+    <div class="text-center">
+      <pre class="text-neon-green text-sm mb-4">
+   ____ ___  ____  ____   ____ ___  ____  
+  | __ ) _ \|  _ \|  _ \ / ___/ _ \|  _ \ 
+  |  _ \ | | | | | | | |_) | |  | | | | |_) |
+  | |_) | |_| | |_| |  _ <| |__| |_| |  _ < 
+  |____/ \___/|____/|_| \_\____\___/|_| \_\ 
+      </pre>
+      <h1 class="text-4xl text-neon-pink">NeonCorp CTF</h1>
+    </div>
+    <div class="terminal bg-gray-800 bg-opacity-80 p-4 rounded-lg mt-6 shadow-neon">
+      <div class="flex items-center mb-2">
+        <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
+        <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
+        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+      </div>
+      <p id="story" class="text-gray-300"></p>
+    </div>
+    <a href="/level1/" class="mt-6 inline-block bg-neon-green text-black px-6 py-3 rounded-lg hover:bg-green-400 transform hover:scale-105 transition-all neon-button">Begin Mission</a>
+  </div>
+  <script>
+    var typed = new Typed('#story', {
+      strings: ["Welcome, ByteRunners. In 2077, NeonCorp controls the city's tech infrastructure. <br>Rumors suggest they're hiding unethical AI experiments. <br>Your mission: infiltrate their servers, find hidden data, and expose their secrets. <br>Start with their public server."],
+      typeSpeed: 20,
+      showCursor: false
+    });
+  </script>
+</body>
+</html>

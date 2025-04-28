@@ -1,0 +1,52 @@
+/* Custom styles for cyberpunk aesthetic */
+:root {
+  --neon-pink: #ff2e63;
+  --neon-green: #00ff9f;
+  --neon-cyan: #00f7ff;
+}
+
+body {
+  background: linear-gradient(135deg, #1a202c, #2d3748);
+  min-height: 100vh;
+  position: relative;
+}
+
+.text-neon-pink {
+  color: var(--neon-pink);
+}
+
+.text-neon-green {
+  color: var(--neon-green);
+}
+
+.terminal {
+  border: 2px solid var(--neon-green);
+  box-shadow: 0 0 10px var(--neon-green);
+}
+
+.shadow-neon {
+  box-shadow: 0 0 15px var(--neon-pink), 0 0 30px var(--neon-cyan);
+}
+
+.neon-button {
+  box-shadow: 0 0 10px var(--neon-green);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px var(--neon-green); }
+  50% { box-shadow: 0 0 20px var(--neon-green); }
+  100% { box-shadow: 0 0 10px var(--neon-green); }
+}
+
+input:focus {
+  outline: none;
+}
+
+input, button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}

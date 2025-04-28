@@ -1,0 +1,4 @@
+<IfModule mod_ratelimit.c>
+    SetOutputFilter RATE_LIMIT
+    SetEnv rate-limit 1
+</IfModule>
