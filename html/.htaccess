@@ -1,0 +1,3 @@
+RewriteEngine On
+# Map /victory/ to victory.html
+RewriteRule ^victory/?$ victory.html [L]

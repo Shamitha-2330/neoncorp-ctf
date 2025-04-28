@@ -8,8 +8,9 @@ RUN sed -i '/LoadModule rewrite_module/s/^#//g' /usr/local/apache2/conf/httpd.co
 RUN sed -i '/LoadModule ratelimit_module/s/^#//g' /usr/local/apache2/conf/httpd.conf
 RUN sed -i 's/AllowOverride None/AllowOverride All/g' /usr/local/apache2/conf/httpd.conf
 
-# Ensure directory indexing is disabled
+# Disable directory indexing and ensure HTML files are served
 RUN echo "Options -Indexes" >> /usr/local/apache2/conf/httpd.conf
+RUN echo "DirectoryIndex index.html victory.html" >> /usr/local/apache2/conf/httpd.conf
 
 # Expose port 80
 EXPOSE 80

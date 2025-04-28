@@ -6,14 +6,16 @@ function submitFlag(expectedFlag, nextLevelUrl) {
     feedback.textContent = 'Access Granted! Redirecting to next mission...';
     feedback.style.color = '#00ff9f';
     feedback.classList.remove('opacity-0');
-    console.log(`Redirecting to: ${nextLevelUrl}`); // Debug log
+    const fullUrl = window.location.origin + nextLevelUrl;
+    console.log(`Attempting redirect to: ${fullUrl}`);
     setTimeout(() => {
       try {
         window.location.href = nextLevelUrl;
       } catch (e) {
         console.error(`Redirect failed: ${e}`);
-        feedback.textContent = 'Error: Redirect failed. Please navigate to ' + nextLevelUrl;
+        feedback.textContent = `Error: Redirect to ${nextLevelUrl} failed. Please navigate to ${fullUrl}`;
         feedback.style.color = '#ff2e63';
+        alert(`Redirect failed. Please visit ${fullUrl} manually.`);
       }
     }, 1000);
   } else {
