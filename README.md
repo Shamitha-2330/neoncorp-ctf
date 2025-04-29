@@ -1,6 +1,6 @@
 
 
-# 🌌 NeonCorp CTF 🌃
+# NeonCorp CTF 
 
 Dive into the neon-lit underworld of **NeonCorp CTF** — a Capture The Flag (CTF) challenge that tests your web enumeration and hacking skills across three cryptic levels. Infiltrate NeonCorp’s unethical AI experiments using a terminal-style neon interface powered by **Typed.js**, and reach the dazzling `/victory/` page. No distractions, no fluff — just pure cyberpunk vibes. 🚀
 
