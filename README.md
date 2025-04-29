@@ -202,7 +202,7 @@ By completing this CTF, you’ll gain hands-on experience in:
 
 ---
 
- 🏆 Goal
+ ##🏆 Goal
 
 Expose NeonCorp’s secrets and uncover their unethical AI practices. Submit all three flags and earn your place among the legends of the cyberpunk underworld.
 
