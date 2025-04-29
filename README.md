@@ -1,240 +1,208 @@
+Here's a polished version of your **NeonCorp CTF** content formatted perfectly for a GitHub `README.md`:
 
-  
-  
+---
 
+# 🌌 NeonCorp CTF 🌃
 
-🌌 NeonCorp CTF 🌃
+Dive into the neon-lit underworld of **NeonCorp CTF** — a Capture The Flag (CTF) challenge that tests your web enumeration and hacking skills across three cryptic levels. Infiltrate NeonCorp’s unethical AI experiments using a terminal-style neon interface powered by **Typed.js**, and reach the dazzling `/victory/` page. No distractions, no fluff — just pure cyberpunk vibes. 🚀
 
-A cyberpunk-themed Capture The Flag challenge for college students
+---
 
+## 🔍 What is DIRB?
 
-📜 Short Description
-Dive into the neon-lit underworld of NeonCorp CTF! 🕶️ Designed for college students, this Capture The Flag (CTF) challenges you to infiltrate NeonCorp’s servers and expose their unethical AI experiments across three levels of web enumeration. With a terminal-style interface glowing in neon pink, green, and cyan, powered by Typed.js typing effects, the CTF culminates in a dazzling victory page. No glitch animations or background images—just pure cyberpunk vibes. 🚀
+**DIRB** (Domain Internet Relay Buster) is a web content scanner that brute-forces directories and files on a web server using wordlists. It’s ideal for:
 
-🔍 What is DIRB?
-DIRB (Domain Internet Relay Buster) is a web content scanner that brute-forces directories and files on a web server using wordlists. It’s your go-to tool for uncovering hidden or unprotected resources in the digital shadows.
+- 🗂️ Web Enumeration: Find hidden directories/files (e.g., backups).
+- 🕵️‍♂️ CTF Challenges: Locate flags or secret endpoints.
+- 🔐 Pentesting: Reveal exposed server content.
 
-🔎 What is dirsearch?
-dirsearch is a Python-based powerhouse for brute-forcing web directories and files. More advanced than DIRB, it offers recursive scanning, extension filtering, and delay options, perfect for cracking complex or rate-limited servers.
+---
 
-🛠️ Why It Is Used
+## 🔎 What is dirsearch?
 
+**dirsearch** is a Python-based web path scanner, more advanced than DIRB, offering:
 
+- 🔁 Recursive Scanning: Explore nested paths.
+- 🎯 Extension Filtering: Target specific file types.
+- 🐢 Delay Options: Bypass rate-limiting.
 
-Tool
-Purpose
+Perfect for tough CTFs or real-world security assessments.
 
+---
 
+## 🛠️ Installation
 
-DIRB
-- Web Enumeration: Finds hidden directories/files (e.g., backups).
+### DIRB
 
-
-
-- CTF Challenges: Locates flags or endpoints in web challenges.
-
-
-
-- Penetration Testing: Spots misconfigured server content.
-
-
-dirsearch
-- Advanced Enumeration: Navigates nested resources with precision.
-
-
-
-- Rate-Limit Evasion: Bypasses restrictions with delays.
-
-
-
-- CTF/Security Testing: Uncovers APIs, files, or flags in tough webs.
-
-
-
-📥 How to Install
-
-DIRB
-
-On Ubuntu or Kali Linux:
+```bash
 sudo apt update
 sudo apt install dirb -y
+dirb  # To verify
+```
 
-Verify:
-dirb
+### dirsearch
 
-
-
-
-dirsearch
-
-On Ubuntu or Kali Linux:
+```bash
 sudo apt update
 sudo apt install python3-pip -y
 pip3 install dirsearch
 
-Verify:
+# Verify
 python3 /usr/local/bin/dirsearch.py --version
+```
 
-Note: If dirsearch isn’t in your PATH, use /usr/local/bin/dirsearch.py.
+> Note: If `dirsearch.py` isn’t in your PATH, use full path like `/usr/local/bin/dirsearch.py`.
 
+---
 
+## ⚙️ Common Commands
 
-⚙️ Common Commands
+### DIRB
 
-DIRB Commands
+```bash
+dirb http://target.com /usr/share/dirb/wordlists/common.txt
+dirb http://target.com -X .txt,.php
+dirb http://target.com -t
+```
 
+### dirsearch
 
-Basic Scan: dirb http://target.com /usr/share/dirb/wordlists/common.txtScans target.com with a common wordlist.
-Extension Scan: dirb http://target.com -X .txt,.phpTargets .txt or .php files.
-Faster Scan: dirb http://target.com -tUses multiple threads (use cautiously).
+```bash
+python3 dirsearch.py -u http://target.com
+python3 dirsearch.py -u http://target.com -r
+python3 dirsearch.py -u http://target.com -e txt,php
+python3 dirsearch.py -u http://target.com --delay=1
+```
 
+---
 
-dirsearch Commands
+## 🎮 Levels Overview & Hints
 
+| Level   | Task                                          | Hint                                                                 |
+|---------|-----------------------------------------------|----------------------------------------------------------------------|
+| Level 1 | Find a forgotten storage area                 | Shadows of routine operations linger in the neon haze.              |
+| Level 2 | Discover a hidden admin control hub           | A path twisted through digital bureaucracy, versioned and veiled.  |
+| Level 3 | Breach the AI vault and uncover final secrets | A unique imprint hides in the static. Patience will reveal it.      |
 
-Basic Scan: python3 dirsearch.py -u http://target.comScans with default settings.
-Recursive Scan: python3 dirsearch.py -u http://target.com -rExplores nested directories.
-Extension Filter: python3 dirsearch.py -u http://target.com -e txt,phpTargets specific file types.
-Rate-Limit Delay: python3 dirsearch.py -u http://target.com --delay=1Adds a 1-second delay.
+---
 
+## 🕹️ How to Play
 
-🎮 Levels Overview with Hint
-Crack three levels of NeonCorp’s defenses, each hiding a flag to decode and submit. 🌌
+### 📋 Prerequisites
 
+#### Docker & Docker Compose
 
-
-Level
-Task
-Hint
-
-
-
-Level 1: The Outer Firewall
-Locate a forgotten storage area where NeonCorp stashes old data.
-Shadows of routine operations linger in the neon haze, unseen by the careless.
-
-
-Level 2: The Admin Portal
-Find a deeply buried control hub for NeonCorp’s operations.
-The path twists through layers of digital bureaucracy, versioned like a fading hologram.
-
-
-Level 3: The AI Vault
-Breach a fortified vault protecting NeonCorp’s core secrets.
-Patience unlocks the gate; a unique imprint hides in the static of the void.
-
-
-
-🕹️ How to Play or Instructions to Solve the Lab
-Prerequisites
-
-Docker & Docker Compose:sudo apt update
+```bash
+sudo apt update
 sudo apt install docker.io -y
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -aG docker $USER
+# Log out and back in after this
 
+docker --version
 
-Log out and back in, verify: docker --version.
-Install Docker Compose:sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+# Install Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
+```
 
+#### Other Tools
 
-
-
-DIRB & dirsearch: Install as above.
-Git:sudo apt install git -y
+```bash
+sudo apt install git -y
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
+```
 
+---
 
+### 🚀 Setup
 
-Setup
-
-Clone the repo:cd ~
+```bash
+cd ~
 git clone https://github.com/Shamitha-2330/neoncorp-ctf.git
 cd neoncorp-ctf
+docker-compose up --build
+```
 
-Replace your-username with your GitHub username.
-Run the CTF:docker-compose up --build
+**Access:** [http://localhost:8080](http://localhost:8080)  
+**Stop the CTF:** `docker-compose down`
 
-Access: http://localhost:8080.
-Stop:docker-compose down
+---
 
+### 🎯 Gameplay
 
+- Start at the homepage: `/`
+- Use **DIRB** or **dirsearch** to find hidden files/directories.
+- Decode flag files (hint: try Base64 decoding).
+- Submit your flag at `/level1/`, `/level2/`, and `/level3/`.
+- Upon Level 3 success, get redirected to `/victory/`.
 
-Playing the CTF
+---
 
-Start: Visit http://localhost:8080 for the welcome page.
-Navigate Levels:
-Use web enumeration tools to find hidden flag files.
-Decode flags (explore common CTF encoding methods).
-Submit decoded flags at /level1/, /level2/, /level3/.
-Level 3 completion redirects to /victory/ for a neon victory screen.
+## 📂 Project Structure
 
-
-
-
-📂 Project Structure
+```
 🌌 NeonCorp CTF
-├── 📄 Dockerfile
-├── 📄 docker-compose.yml
-├── 📁 html
-│   ├── 📄 .htaccess
-│   ├── 📁 assets
-│   │   ├── 📁 images
-│   │   ├── 📄 script.js
-│   │   └── 📄 styles.css
-│   ├── 📄 index.html
-│   ├── 📁 level1
-│   │   ├── 📁 backup
-│   │   │   └── 📄 flag.txt
-│   │   └── 📄 index.html
-│   ├── 📁 level2
-│   │   ├── 📄 index.html
-│   │   └── 📁 portal
-│   │       └── 📁 v2
-│   │           └── 📁 admin
-│   │               └── 📄 flag.txt
-│   ├── 📁 level3
-│   │   ├── 📄 .htaccess
-│   │   ├── 📄 index.html
-│   │   └── 📁 vault
-│   │       └── 📁 key_98765
-│   │           └── 📄 flag.key
-│   └── 📄 victory.html
-├── 📄 LICENSE
-└── 📄 README.md
+├── Dockerfile
+├── docker-compose.yml
+├── html
+│   ├── .htaccess
+│   ├── assets/
+│   │   ├── images/
+│   │   ├── script.js
+│   │   └── styles.css
+│   ├── index.html
+│   ├── level1/
+│   │   ├── backup/
+│   │   │   └── flag.txt
+│   │   └── index.html
+│   ├── level2/
+│   │   ├── index.html
+│   │   └── portal/v2/admin/flag.txt
+│   ├── level3/
+│   │   ├── .htaccess
+│   │   ├── index.html
+│   │   └── vault/key_98765/flag.key
+│   └── victory.html
+├── LICENSE
+└── README.md
+```
 
+---
 
-💻 Tech Stack
+## 💻 Tech Stack
 
-Frontend: HTML, Tailwind CSS, Typed.js (neon typing effects), custom CSS (cyberpunk glow).
-Backend: Apache (httpd:2.4 Docker image) with mod_rewrite, mod_ratelimit.
-Deployment: Docker, Docker Compose.
-Tools: DIRB, dirsearch (enumeration), Base64 (flag encoding).
+- **Frontend:** HTML, Tailwind CSS, Typed.js, neon-themed custom CSS.
+- **Backend:** Apache HTTPD (mod_rewrite, mod_ratelimit).
+- **Deployment:** Docker & Docker Compose.
+- **Tools:** DIRB, dirsearch, Base64.
 
+---
 
-🎯 Goal
-Expose NeonCorp’s AI secrets by conquering three levels of web enumeration. Find and decode hidden flags to reach the /victory/ page and become a legend in the cyberpunk underworld. 🏆
+## 🧠 Learning Outcomes
 
-📏 Rules
+By completing this CTF, you’ll gain hands-on experience in:
 
-🔒 Use only DIRB or dirsearch for enumeration.
-🚫 No brute-forcing flag submission forms.
-📝 Share write-ups to inspire the community.
+- 🔍 Web Enumeration & Reconnaissance.
+- 🧠 CTF Techniques: Decoding, hidden file discovery.
+- 🛡️ Cybersecurity Fundamentals: Misconfigurations, brute-force protection.
+- 🐳 Docker: Building and deploying containerized environments.
+- 🔧 Real-world Tools: Mastering DIRB and dirsearch.
 
+---
 
-📚 Learning Outcomes
-By hacking through NeonCorp CTF, you’ll master:
+## 📏 Rules
 
-🌐 Web Enumeration: Use DIRB/dirsearch to uncover hidden server content.
-🏁 CTF Skills: Decode flags and tackle web challenges.
-🔐 Cybersecurity: Learn about brute-forcing, rate-limiting, and misconfigurations.
-🐳 Docker: Deploy apps with Docker and Docker Compose.
-🧩 Problem-Solving: Navigate cryptic hints in a neon-soaked world.
+- 🔒 Use only **DIRB** or **dirsearch** for enumeration.
+- 🚫 Don’t brute-force flag submission forms.
+- 📝 Share write-ups to help others learn!
 
+---
 
+ 🏆 Goal
 
- 
+Expose NeonCorp’s secrets and uncover their unethical AI practices. Submit all three flags and earn your place among the legends of the cyberpunk underworld.
+
